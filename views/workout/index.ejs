@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<h2>Movie List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Workout</th>
+      <th>Eaten</th>
+      <th>Muscle Groups</th>
+      <th>Sets</th>
+      <th>Reps</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= w.day %></td>
+        <td><%= w.workout %></td>
+        <td><%= w.eaten ?  %></td>
+        <td><%= w.muscleGroup %></td>
+        <td><%= w.sets %></td>
+        <td><%= w.reps %></td>
+      </tr>
+  </tbody>
+</table>
+
+<%- include('../partials/header') %>

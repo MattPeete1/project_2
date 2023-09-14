@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<section id="show-workouts">
+  <div>Day: </div>
+  <div><%= workout.day %></div>
+  <div>Workout: </div>
+  <div><%= workout.workout %></div>
+  <div>Eaten: </div>
+  <div><%= workout.eaten ? 'Yes' : 'Nope' %></div>
+  <div>Muslce Group: </div>
+  <div><%= workout.muscleGroup %></div>
+  <div>Sets: </div>
+  <div><%= workout.sets %></div>
+  <div>Reps: </div>
+  <div><%= workout.reps %></div>
+</section>
+  
+<%- include('../partials/footer') %>

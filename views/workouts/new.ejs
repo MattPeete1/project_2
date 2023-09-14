@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+<form action="/workouts" method="POST">
+    <label>Day (1-365):
+        <input type="text" name="day">
+    </label><br>
+    <label>Workout:
+        <select name="workout">
+            <option value="Workout 1">Workout 1</option>
+            <option value="Workout 2">Workout 2</option>
+            <option value="Workout 3">Workout 3</option>
+            <option value="Workout 4">Workout 4</option>
+            <option value="Workout 5">Workout 5</option>
+            <option value="Workout 6">Workout 6</option>
+            <option value="Workout 7">Workout 7</option>
+        </select>
+    </label><br>
+    <label>Eaten:
+        <input type="checkbox" name="eaten" checked>
+    </label><br>
+    <label>Muscle Group:
+        <select name="muscleGroup">
+            <option value="Chest, Shoulders, Triceps">Chest, Shoulders, Triceps</option>
+            <option value="Core & Cardio">Core & Cardio</option>
+            <option value="Back & Biceps">Back & Biceps</option>
+            <option value="Core & Cardio">Core & Cardio</option>
+            <option value="Legs">Legs</option>
+            <option value="Rest">Rest</option>
+        </select>
+    </label><br>
+    <label>Sets (for each workout):
+        <select name="sets">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </label><br>
+    <label>Reps (Number 1-50 for each set):
+        <input type="text" name="reps">
+    </label>
+    <button type="submit">Submit</button>
+</form>
+
+<%- include('../partials/footer') %>

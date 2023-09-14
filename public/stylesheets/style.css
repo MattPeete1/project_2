@@ -1,8 +1,26 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 30px Arial;
+  background-image: url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-a {
-  color: #00B7FF;
+body > nav {
+  grid-area: nav;
+  background-color: rgba(0, 0, 0, 0.477);
+  text-align: center;
+}
+
+nav > a{
+  color: #ffffff;
+}
+
+#list {
+  position: absolute;
+  top: 400px;
+  left: 700px;
+  background-color: rgba(0, 0, 0, 0.477);
+  color: #ffffff;
+  border-radius: 15%;
 }
