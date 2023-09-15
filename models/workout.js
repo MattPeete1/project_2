@@ -1,6 +1,23 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const notesSchema = new Schema({
+content: {
+    type: String,
+    required: true
+},
+exerciseNo: {
+    type: String,
+    enum: ['Exercise 1', 'Exercise 2', 'Exercise 3', 'Exercise 4', 'Exercise 5', 'Exercise 6', 'Exercise 7', 'Exercise 8', 'Exercise 9', 'Exercise 10']
+},
+intensity: {
+    type: String,
+    enum: ['Low', 'Medium', 'High']
+},
+ }, {
+    timestamps: true
+ });
+  
 const workoutSchema = new Schema({
 day: {
     type: Number,
@@ -31,6 +48,7 @@ reps: {
     min: 0,
     max: 50
 },
+notes: [notesSchema],
  }, {
     timestamps: true,
  });

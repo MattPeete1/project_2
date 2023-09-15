@@ -5,15 +5,16 @@
     <tr>
       <th>Day</th>
       <th>Workout</th>
-      <th></th>
+      <th>Muscle Group</th>
     </tr>
   </thead>
   <tbody>
     <% workouts.forEach(function(w) { %>
       <tr>
         <td><%= w.day %></td>
-        <td><%= w.workout %></td>
-        <td><a href="/workouts/<%= w._id %>">DETAILS</a></td>
+        <td>&nbsp &nbsp<%= w.workout %></td>
+        <td>&nbsp &nbsp<%= w.muscleGroup %></td>
+        <td><button onclick="location.href='/workouts/<%= w._id %>'"></button></td>
       </tr>
       <% }); %>
     </tbody>

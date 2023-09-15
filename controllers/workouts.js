@@ -3,13 +3,13 @@ const Workout = require('../models/workout');
 async function index(req, res) {
     const workouts = await Workout.find({});
     res.render('workouts/index', {
-        title: 'Workouts', workouts
+        title: 'All Workouts', workouts
     });
 };
 
 async function show(req, res) {
     const workout = await Workout.findById(req.params.id);
-    res.render('workouts/show', { title: 'Workout Detail', workout
+    res.render('workouts/show', { title: 'Day Details', workout
 });
   }
 

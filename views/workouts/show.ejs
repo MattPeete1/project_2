@@ -14,5 +14,57 @@
   <div>Reps: </div>
   <div><%= workout.reps %></div>
 </section>
-  
+
+</section>
+<br><br><h2>Notes</h2>
+<form id="add-note-form" method="POST"
+  action="/workouts/<%= workout._id %>/notes">
+  <label>Note:</label>
+  <textarea name="content"></textarea>
+  <label>Exercise Number:</label>
+  <select name="exerciseNo">
+    <option value="Exercise 1">Exercise 1</option>
+    <option value="Exercise 2">Exercise 2</option>
+    <option value="Exercise 3">Exercise 3</option>
+    <option value="Exercise 4">Exercise 4</option>
+    <option value="Exercise 5">Exercise 5</option>
+    <option value="Exercise 6">Exercise 6</option>
+    <option value="Exercise 7">Exercise 7</option>
+    <option value="Exercise 8">Exercise 8</option>
+    <option value="Exercise 9">Exercise 9</option>
+    <option value="Exercise 10">Exercise 10</option>
+  </select>
+  <label>Intensity:</label>
+  <select name="intensity">
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+  </select>
+  <input type="submit" value="Add Note">
+</form>
+
+<% if (workout.notes.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Exercise Number</th>
+        <th>Intensity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% workout.notes.forEach(function(n) { %>
+        <tr>
+          <!-- .toLocaleDateString() provides a more friendly date format -->
+          <td><%= n.createdAt.toLocaleDateString() %></td>
+          <td><%= n.content %></td>
+          <td><%= n.exerciseNo %></td>
+          <td><%= n.intensity %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Notes</h5>
+<% } %>
 <%- include('../partials/footer') %>
