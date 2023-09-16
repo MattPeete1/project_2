@@ -13,6 +13,7 @@
   <div><%= workout.sets %></div>
   <div>Reps: </div>
   <div><%= workout.reps %></div>
+  <a href="/workouts/<%= workout.id %>/edit">Edit Workout Details</a>
 </section>
 
 </section>
@@ -55,7 +56,6 @@
     <tbody>
       <% workout.notes.forEach(function(n) { %>
         <tr>
-          <!-- .toLocaleDateString() provides a more friendly date format -->
           <td><%= n.createdAt.toLocaleDateString() %></td>
           <td><%= n.content %></td>
           <td><%= n.exerciseNo %></td>
