@@ -1,8 +1,5 @@
 const Workout = require('../models/workout');
 
-module.exports = {
-    create
-};
 async function create(req, res) {
     const workout = await Workout.findById(req.params.id);
     workout.notes.push(req.body);
@@ -12,4 +9,8 @@ async function create(req, res) {
         console.log(err);
     }
     res.redirect(`/workouts/${workout._id}`);
+};
+
+module.exports = {
+    create,
 };

@@ -13,8 +13,27 @@
   <div><%= workout.sets %></div>
   <div>Reps: </div>
   <div><%= workout.reps %></div>
+  <div>Exercises:</div>
+  <ul>
+    <%- workout.exercise.map(e => 
+      `<li>${e.name}</li>`
+    ) %>
+  </ul>
   <a href="/workouts/<%= workout.id %>/edit">Edit Workout Details</a>
 </section>
+
+<form
+  id="add-ex-to-li"
+  action="/workouts/<%- workout._id %>/exercises"
+  method="POST"
+  >
+  <select name="exerciseId">
+    <%- exercises.map(e => 
+      `<option value="${e._id}">${e.name}</option>`
+    ) %>
+  </select>
+  <button type="submit">Add to Exercises</button>
+</form>
 
 </section>
 <br><br><h2>Notes</h2>

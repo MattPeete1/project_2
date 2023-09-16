@@ -48,6 +48,7 @@ reps: {
     min: 0,
     max: 50
 },
+exercise: [{ type: Schema.Types.ObjectId, ref: 'Exercise' }],
 notes: [notesSchema],
  }, {
     timestamps: true,

@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<section id="badge-container">
+  <% exercises.forEach(function(e) { %>
+    <article class="badge"><%= e.name %></article>
+  <% }) %>
+</section>
+
+<form id="add-exercise-form" action="/exercises" method="POST">
+  <input type="text" name="name">
+  <input type="submit" value="Add Exercise">
+</form>
+
+<%- include('../partials/footer') %>

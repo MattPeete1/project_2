@@ -1,4 +1,5 @@
 const Workout = require('../models/workout');
+const Exercise = require('../models/exercise');
 
 async function index(req, res) {
     const workouts = await Workout.find({});
@@ -8,9 +9,10 @@ async function index(req, res) {
 };
 
 async function show(req, res) {
-    const workout = await Workout.findById(req.params.id);
+    const workout = await Workout.findById(req.params.id).populate('exercise');
+    const exercises = await Exercise.find({_id: {$nin: workout.exercise}}).sort('name');
     res.render('workouts/show', {
-        title: 'Day Details', workout
+        title: 'Day Details', workout , exercises
     });
 };
 
@@ -51,8 +53,8 @@ async function create(req,res,next) {
     console.log(req.body);
     req.body.eaten = !!req.body.eaten;
     try {
-      await Workout.create(req.body);
-      res.redirect('/workouts/new');
+      const workout = await Workout.create(req.body);
+      res.redirect(`/workouts/${workout._id}`);
     } catch (err) {
       console.log(err);
       res.render('workout/new', { errorMsg: err.message });
