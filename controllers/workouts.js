@@ -14,6 +14,15 @@ async function show(req, res) {
     });
 };
 
+function deleteWorkout(req, res, next) {
+    Workout.findById(req.params.id)
+      .then((workout) => {
+        return workout.deleteOne();
+      })
+      .then(() => res.redirect('/workouts'))
+      .catch(next);
+};
+
 function update(req, res, next) {
     Workout.findById(req.params.id)
       .then((workout) => {
@@ -21,7 +30,7 @@ function update(req, res, next) {
       })
       .then(() => res.redirect(`/workouts/${req.params.id}`))
       .catch(next);
-  }
+};
 
 function edit(req, res) {
     Workout.findById(req.params.id)
@@ -30,7 +39,7 @@ function edit(req, res) {
             title: 'Edit Workout', workout
         });
     });
-}
+};
 
 function newWorkout(req, res, next) {
     res.render('workout/new', {
@@ -56,5 +65,6 @@ module.exports = {
     newWorkout,
     create,
     edit,
-    update
+    update,
+    deleteWorkout
 };

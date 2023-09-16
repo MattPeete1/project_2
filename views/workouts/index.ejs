@@ -10,6 +10,10 @@
   </thead>
   <tbody>
     <% workouts.forEach(function(w) { %>
+      <form action="/workouts/<%= w.id %>?_method=DELETE"
+        class="delete-form" method="POST">
+        <button type="submit">X</button>
+      </form>
       <tr>
         <td><%= w.day %></td>
         <td>&nbsp &nbsp<%= w.workout %></td>
