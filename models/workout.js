@@ -14,9 +14,16 @@ intensity: {
     type: String,
     enum: ['Low', 'Medium', 'High']
 },
- }, {
-    timestamps: true
- });
+user: {
+  type: Schema.Types.ObjectId,
+  ref: 'User',
+  required: true
+},
+userName: String,
+userAvatar: String
+}, {
+timestamps: true
+});
   
 const workoutSchema = new Schema({
 day: {

@@ -37,6 +37,7 @@
 
 </section>
 <br><br><h2>Notes</h2>
+<% if (user) { %>
 <form id="add-note-form" method="POST"
   action="/workouts/<%= workout._id %>/notes">
   <label>Note:</label>
@@ -62,12 +63,14 @@
   </select>
   <input type="submit" value="Add Note">
 </form>
+<% } %>
 
 <% if (workout.notes.length) { %>
   <table>
     <thead>
       <tr>
-        <th>Date</th>
+        <th>User</th>
+        <th>Note</th>
         <th>Exercise Number</th>
         <th>Intensity</th>
       </tr>
@@ -75,12 +78,19 @@
     <tbody>
       <% workout.notes.forEach(function(n) { %>
         <tr>
-          <td><%= n.createdAt.toLocaleDateString() %></td>
+          <td class="note-user"><img alt="avatar" src="<%= n.userAvatar %>" referrerpolicy="no-referrer" ><%= n.userName %></td>
           <td><%= n.content %></td>
           <td><%= n.exerciseNo %></td>
           <td><%= n.intensity %></td>
+          <td>
+            <% if (user?._id.equals(n.user)) { %>
+              <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
         </tr>
-      <% }); %>
+      <% }) %>
     </tbody>
   </table>
 <% } else { %>

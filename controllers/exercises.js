@@ -7,12 +7,12 @@ async function newExercise(req, res) {
 };
 
 async function create(req, res) {
-  try {
-    await Exercise.create(req.body);
-  } catch (err) {
-    console.log(err);
-  }
-  res.redirect('/exercises/new');
+    try {
+        await Exercise.create(req.body);
+    } catch (err) {
+        console.log(err);
+    }
+    res.redirect('/exercises/new');
 };
 
 async function addToExercise(req, res) {
