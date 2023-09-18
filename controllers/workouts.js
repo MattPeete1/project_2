@@ -4,7 +4,7 @@ const Exercise = require('../models/exercise');
 async function index(req, res) {
     const workouts = await Workout.find({});
     res.render('workouts/index', {
-        title: 'All Workouts', workouts
+        title: 'Workouts', workouts
     });
 };
 

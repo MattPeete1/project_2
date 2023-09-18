@@ -9,7 +9,7 @@ router.get('/new', ensureLoggedIn, workoutCtrl.newWorkout);
 
 router.get('/:id/edit', ensureLoggedIn,  workoutCtrl.edit);
 
-router.get('/:id', workoutCtrl.show);
+router.get('/:id', ensureLoggedIn, workoutCtrl.show);
 
 router.post('/', ensureLoggedIn, workoutCtrl.create);
 

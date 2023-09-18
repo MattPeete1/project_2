@@ -11,11 +11,14 @@
   <nav>
     <% if (user) { %>
       <a href="/workouts/new" <%= title === 'Add Workouts' ? 'class="active"' : '' %>>Add Workouts</a>
+      |
       <a href="/workouts" <%= title === 'All Workouts' ? 'class="active"' : '' %>>Home</a>
+      |
       <a href="/exercises/new" <%= title === 'Add Exercise' ? 'class="active"' : '' %>>Add Exercise</a>
+      |
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
   </nav>
-<h1><%= title %></h1>
+<h1 id="header-title"><%= title %></h1>

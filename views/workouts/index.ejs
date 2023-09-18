@@ -12,13 +12,13 @@
     <% workouts.forEach(function(w) { %>
       <form action="/workouts/<%= w.id %>?_method=DELETE"
         class="delete-form" method="POST">
-        <button type="submit">X</button>
+        <button type="submit" id="workoutDelBtn"></button>
       </form>
       <tr>
         <td><%= w.day %></td>
         <td>&nbsp &nbsp<%= w.workout %></td>
         <td>&nbsp &nbsp<%= w.muscleGroup %></td>
-        <td><button onclick="location.href='/workouts/<%= w._id %>'"></button></td>
+        <td><button onclick="location.href='/workouts/<%= w._id %>'" id="details-btn"></button></td>
       </tr>
       <% }); %>
     </tbody>
