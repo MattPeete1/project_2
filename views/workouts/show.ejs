@@ -82,7 +82,7 @@
           <td><%= n.content %> <strong>-</strong></td>
           <td><%= n.exerciseNo %> <strong>-</strong></td>
           <td><%= n.intensity %> <strong>-</strong></td>
-          <td>
+          <td id="cmntDelBtn">
             <% if (user?._id.equals(n.user)) { %>
               <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>

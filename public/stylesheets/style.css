@@ -36,7 +36,7 @@ form {
   width: 200px;
   top: 250px;
   left: 1030px;
-  height: 280px;
+  height: 290px;
 }
 
 #intensityLi {
@@ -141,6 +141,12 @@ border: 3px solid rgb(0, 0, 0);
   top: 180px;
   left: 755px;
   cursor: pointer;
+}
+
+#cmntDelBtn {
+  position: absolute;
+  left: -520px;
+  top: -570px;
 }
 
 #add-exercise-form2 {
