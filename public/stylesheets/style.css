@@ -13,6 +13,75 @@ nav {
   border-radius: 15%;
 }
 
+form {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.585);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 15%;
+  width: 240px;
+  position: absolute;
+  left: 735px;
+  top: 200px;
+}
+
+#add-note-form {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.585);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 15%;
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  top: 250px;
+  left: 1030px;
+  height: 280px;
+}
+
+#intensityLi {
+  height: 30px;
+  width: 150px;
+  border-radius: 15%;
+}
+
+#exerciseNumLi {
+height: 30px;
+width: 150px;
+border-radius: 15%;
+border: 3px solid rgb(0, 0, 0);
+}
+
+#show-workouts {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.585);
+  border: 3px solid rgb(0, 0, 0);
+  font-size: 15px;
+  border-radius: 15%;
+  text-align: center;
+  width: 200px;
+  position: absolute;
+  left: 470px;
+  top: 250px;
+}
+
+#exChooseBtn {
+  height: 30px;
+  width: 150px;
+  border-radius: 15%;
+}
+
+#add-ex-to-li {
+  background-color: rgba(0, 0, 0, 0.585);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 15%;
+  text-align: center;
+  width: 200px;
+  position: absolute;
+  left: 750px;
+  top: 290px;
+}
+
 #header-title {
   color: white;
   font-size: 50px;
@@ -27,6 +96,17 @@ nav {
   border: 5px solid rgb(0, 0, 0);
 
 }
+
+#comments {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.585);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 15%;
+  position: absolute;
+  left: 515px;
+  top: 750px;
+}
+  
 
 #list {
   color: white;

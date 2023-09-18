@@ -1,19 +1,19 @@
 <%- include('../partials/header') %>
 
 <section id="show-workouts">
-  <div>Day: </div>
+  <div><strong>Day:</strong> </div>
   <div><%= workout.day %></div>
-  <div>Workout: </div>
+  <div><strong>Workout:</strong> </div>
   <div><%= workout.workout %></div>
-  <div>Eaten: </div>
+  <div><strong>Eaten:</strong></div>
   <div><%= workout.eaten ? 'Yes' : 'Nope' %></div>
-  <div>Muslce Group: </div>
+  <div><strong>Muslce Group:</strong></div>
   <div><%= workout.muscleGroup %></div>
-  <div>Sets: </div>
+  <div><strong>Sets:</strong></div>
   <div><%= workout.sets %></div>
-  <div>Reps: </div>
+  <div><strong>Reps:</strong></div>
   <div><%= workout.reps %></div>
-  <div>Exercises:</div>
+  <div><strong>Exercises:</strong></div>
   <ul>
     <%- workout.exercise.map(e => 
       `<li>${e.name}</li>`
@@ -27,23 +27,23 @@
   action="/workouts/<%- workout._id %>/exercises"
   method="POST"
   >
-  <select name="exerciseId">
+  <select name="exerciseId" id="exChooseBtn">
     <%- exercises.map(e => 
       `<option value="${e._id}">${e.name}</option>`
     ) %>
   </select>
-  <button type="submit">Add to Exercises</button>
+  <button type="submit" id="exSubBtn">Add to Exercises</button>
 </form>
 
 </section>
-<br><br><h2>Notes</h2>
+<br><br>
 <% if (user) { %>
 <form id="add-note-form" method="POST"
   action="/workouts/<%= workout._id %>/notes">
   <label>Note:</label>
   <textarea name="content"></textarea>
   <label>Exercise Number:</label>
-  <select name="exerciseNo">
+  <select name="exerciseNo" id="exerciseNumLi">
     <option value="Exercise 1">Exercise 1</option>
     <option value="Exercise 2">Exercise 2</option>
     <option value="Exercise 3">Exercise 3</option>
@@ -56,7 +56,7 @@
     <option value="Exercise 10">Exercise 10</option>
   </select>
   <label>Intensity:</label>
-  <select name="intensity">
+  <select name="intensity" id="intensityLi">
     <option value="Low">Low</option>
     <option value="Medium">Medium</option>
     <option value="High">High</option>
@@ -66,7 +66,7 @@
 <% } %>
 
 <% if (workout.notes.length) { %>
-  <table>
+  <table id="comments">
     <thead>
       <tr>
         <th>User</th>
@@ -78,10 +78,10 @@
     <tbody>
       <% workout.notes.forEach(function(n) { %>
         <tr>
-          <td class="note-user"><img alt="avatar" src="<%= n.userAvatar %>" referrerpolicy="no-referrer" ><%= n.userName %></td>
-          <td><%= n.content %></td>
-          <td><%= n.exerciseNo %></td>
-          <td><%= n.intensity %></td>
+          <td class="note-user"><img alt="avatar" src="<%= n.userAvatar %>" referrerpolicy="no-referrer" ><%= n.userName %> <strong>-</strong></td>
+          <td><%= n.content %> <strong>-</strong></td>
+          <td><%= n.exerciseNo %> <strong>-</strong></td>
+          <td><%= n.intensity %> <strong>-</strong></td>
           <td>
             <% if (user?._id.equals(n.user)) { %>
               <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
