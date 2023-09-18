@@ -138,8 +138,8 @@ border: 3px solid rgb(0, 0, 0);
   height: 30px;
   border: 3px solid rgb(0, 0, 0);
   position: absolute;
-  top: 180px;
-  left: 755px;
+  top: -20px;
+  left: 20px;
   cursor: pointer;
 }
 
@@ -156,8 +156,8 @@ border: 3px solid rgb(0, 0, 0);
   border-radius: 100%;
   border: 2px solid rgb(0, 0, 0);
   position: absolute;
-  top: 180px;
-  left: 910px;
+  top: -20px;
+  left: 170px;
   cursor: pointer;
 }
 
