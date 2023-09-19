@@ -20,7 +20,7 @@ This is a web application that allows you to be able to track the stats of your 
 ## Getting Started
 Once you are logged in you will have the ability to be able to make workouts, edit them, leave notes for specific exercises that you completed, add exercises, and see friends notes from their performances.
 
-- link
+- https://project-2-epmm.onrender.com
 
 ## Future Features
 - Add a timer for workouts
